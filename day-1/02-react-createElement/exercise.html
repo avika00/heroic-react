@@ -36,6 +36,7 @@
       // STEP 1: Get the root DOM element
       // Use document.getElementById() to get the element with id "root"
       // Store it in a variable called rootElement
+      const rootElement = document.getElementById('root');
 
       // STEP 2: Create a React element using React.createElement
       // API: React.createElement(type, props, ...children)
@@ -52,6 +53,28 @@
       // - child: an h1 element with text "Hello World"
       //
       // React Docs: https://react.dev/reference/react/createElement
+      const heading = React.createElement(
+        'h1',{
+          style: {
+            color: 'white',
+            fontSize: '38px',
+            fontWeight: 'bold',
+          },
+        },
+        'Hello World',
+      );
+
+      const paragraph = React.createElement(
+        'p',
+        {
+          style: {
+            color: 'white',
+            fontSize: '24px',
+          },
+        },
+        'My Name is Vika!',
+      );
+
 
       // STEP 3: Create a React root
       // Use ReactDOM.createRoot() passing in your rootElement
@@ -65,10 +88,45 @@
       // Make your div contain both an h1 and a p element
       // You can pass multiple children as additional arguments:
       // React.createElement('div', props, child1, child2, child3)
+      
 
       // BONUS CHALLENGE 2: Add an onClick event
       // Add onClick to props: { onClick: function() { alert('Clicked!') } }
       // Note: In React, event handlers are camelCase (onClick, not onclick)
+      const button = React.createElement(
+        'button',
+        {
+          onClick: () => alert('Hai Guys! :)'),
+          style: {
+            color: 'white',
+            padding: '12px 24px',
+            fontSize: '18px',
+            backgroundColor: 'rgba(237, 218, 228, 0.8)',
+            borderRadius: '8px',
+          },
+        },
+        'Click Me',
+      );
+
+      const container = React.createElement(
+        'div',
+        {
+          style: {
+            alignItems: 'center',
+            textAlign: 'center',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            padding: '40px',
+            borderRadius: '16px',
+          },
+        },
+        heading,
+        paragraph,
+        button,
+      );
+      
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(container)
+      
     </script>
   </body>
 </html>

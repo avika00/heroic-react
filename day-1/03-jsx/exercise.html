@@ -43,35 +43,7 @@
       const rootElement = document.getElementById('root');
 
       // This is the old way with React.createElement:
-      const element = React.createElement(
-        'div',
-        {
-          className: 'container',
-          style: {
-            padding: '40px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '16px',
-            textAlign: 'center',
-            maxWidth: '600px',
-            margin: '50px auto',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-          },
-        },
-        React.createElement(
-          'h1',
-          {
-            style: { color: 'white', fontSize: '48px', margin: '0' },
-          },
-          'Hello World',
-        ),
-        React.createElement(
-          'p',
-          { style: { color: 'white', fontSize: '24px' } },
-          'Welcome to React!',
-        ),
-      );
+      
 
       // STEP 2: Convert the above to JSX
       // JSX looks like HTML but with some differences:
@@ -100,6 +72,22 @@
       // - A variable for your name
       // - Current time using {new Date().toLocaleTimeString()}
       // - A math expression like {2 + 2}
+
+      const userName = "Vika";
+      
+      
+      const element = (
+        <div className="container" style={{ alignItems: 'center', textAlign: 'center', backgroundColor: 'rgba(255, 255, 255, 0.15)',backdropFilter: 'blur(10px)', padding: '20px 32px', borderRadius: '16px' }}>
+          <div>
+            <h1 style={{color: 'white', fontSize:'48px'}}>Hello World</h1>
+            <p style={{color: 'white', fontSize:'32px'}}>Welcome to React, {userName}!</p>
+          </div>
+
+          <button style={{fontSize: '24px', color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '8px', borderRadius: '10px'}} onClick={() => alert('Haiiii guyssss!! ')}>
+          Click me
+          </button>
+        </div>
+      );
 
       // STEP 4: JSX Rules to remember
       // 1. Must have ONE root element (wrap in <div> or <> fragment)
